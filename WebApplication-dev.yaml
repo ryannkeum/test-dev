@@ -1,0 +1,9 @@
+apiVersion: kro.run/v1alpha1
+kind: WebApplication
+metadata:
+  name: my-app-nkeum-260521
+  namespace: 260521-dev
+spec:
+  name: my-app-nkeum-260521
+  image: nginx:1.25
+  replicas: 3
