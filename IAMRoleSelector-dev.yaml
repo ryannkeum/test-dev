@@ -1,0 +1,9 @@
+apiVersion: services.k8s.aws/v1alpha1
+kind: IAMRoleSelector
+metadata:
+  name: dev-team-config
+spec:
+  arn: arn:aws:iam::905418051405:role/dev-team-s3-role
+  namespaceSelector:
+    names:
+      - '260521-dev' # dev-team

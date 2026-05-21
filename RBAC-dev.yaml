@@ -1,0 +1,23 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: kro-dev-role
+  namespace: 260521-dev
+rules:
+  - apiGroups: ["kro.run"]
+    resources: ["webapplications"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: kro-dev-role-binding
+  namespace: 260521-dev
+subjects:
+  - kind: ServiceAccount
+    name: dev-user
+    namespace: 260521-dev
+roleRef:
+  kind: Role
+  name: kro-dev-role
+  apiGroup: rbac.authorization.k8s.io
